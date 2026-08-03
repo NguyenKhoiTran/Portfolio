@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --color-bgLight: #F5F2EC;
+  --color-surfaceLight: #FFFFFF;
+  --color-bgDark: #121A1E;
+  --color-surfaceDark: #182329;
+  --color-textPrimary: #1D252B;
+  --color-textSecondary: #667078;
+  --color-brandPrimary: #176E69;
+  --color-brandHover: #115954;
+  --color-borderLight: #DDE1E1;
+  --color-borderDark: #2C3A3F;
+  --color-accentTeal: #DDEDEC;
+
+  --font-sans: 'Inter', sans-serif;
+  --font-heading: 'Space Grotesk', sans-serif;
+
+  --shadow-soft: 0 12px 32px -8px rgba(29, 37, 43, 0.04), 0 1px 3px rgba(29, 37, 43, 0.02);
+  --shadow-soft-hover: 0 20px 48px -12px rgba(29, 37, 43, 0.08), 0 1px 5px rgba(29, 37, 43, 0.03);
+  --shadow-dark-soft: 0 12px 32px -8px rgba(0, 0, 0, 0.4), 0 1px 3px rgba(0, 0, 0, 0.2);
+  --shadow-dark-soft-hover: 0 20px 48px -12px rgba(0, 0, 0, 0.5), 0 1px 5px rgba(0, 0, 0, 0.3);
+
+  --radius-premium: 16px;
+}
+
+@utility glass-nav {
+  background: rgba(245, 242, 236, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(221, 225, 225, 0.5);
+
+  @variant dark {
+    background: rgba(18, 26, 30, 0.75);
+    border-bottom: 1px solid rgba(44, 58, 63, 0.5);
+  }
+}
+
+@utility animate-float {
+  animation: float 5s ease-in-out infinite;
+}
+
+@utility animate-pulse-slow {
+  animation: pulse-slow 8s ease-in-out infinite;
+}
+
+@layer base {
+  html {
+    scroll-behavior: auto; /* Required for Lenis smooth scroll */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--color-bgLight);
+    color: var(--color-textPrimary);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+  
+  body::selection {
+    background-color: rgba(23, 110, 105, 0.2);
+    color: var(--color-brandPrimary);
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: var(--color-bgLight);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba(102, 112, 120, 0.2);
+    border-radius: 9999px;
+    transition: background-color 0.2s;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(102, 112, 120, 0.4);
+  }
+
+  /* Dark mode scrollbar */
+  .dark ::-webkit-scrollbar-track {
+    background-color: var(--color-bgDark);
+  }
+
+  .dark ::-webkit-scrollbar-thumb {
+    background-color: rgba(44, 58, 63, 0.4);
+    border-radius: 9999px;
+  }
+
+  .dark ::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(44, 58, 63, 0.6);
+  }
+}
+
+/* Lenis Custom styles */
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overflow: clip;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Premium micro-animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 0.15;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
