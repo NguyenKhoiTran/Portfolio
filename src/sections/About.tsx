@@ -13,7 +13,8 @@ export const About: React.FC = () => {
           </span>
           <Reveal>
             <h2 className="text-3xl md:text-5xl font-bold font-heading text-textPrimary leading-tight tracking-tight">
-              Một Backend Developer yêu thích hệ thống có khả năng mở rộng.
+              Một Developer yêu thích việc xây dựng các sản phẩm phần mềm hiệu quả và có khả năng mở rộng.
+
             </h2>
           </Reveal>
         </div>
