@@ -4,7 +4,7 @@ import { Card } from '../components/common/Card';
 import { Reveal } from '../components/common/Reveal';
 import { Button } from '../components/common/Button';
 import { Mail, Phone, Github, ArrowRight, FileText } from 'lucide-react';
-import cvPdf from '../assets/documents/CV_NguyenHuu.pdf';
+import cvPdf from '../assets/documents/CV_TranKhoiNguyen.pdf';
 
 export const Contact: React.FC = () => {
   const contactLinks = [
@@ -47,7 +47,7 @@ export const Contact: React.FC = () => {
               Nếu bạn quan tâm đến các dự án của mình, có nhu cầu tuyển dụng hoặc muốn trao đổi về cơ hội hợp tác phát triển phần mềm, hãy kết nối ngay với mình nhé.
             </p>
           </Reveal>
-          
+
           <Reveal delay={0.2}>
             {/* CV Download Action */}
             <div className="p-5 bg-surfaceLight rounded-xl border border-borderLight shadow-soft flex items-center justify-between gap-4 max-w-sm">
@@ -65,7 +65,7 @@ export const Contact: React.FC = () => {
                 size="sm"
                 asLink={true}
                 href={cvPdf}
-                download="CV_NguyenHuu.pdf"
+                download="CV_TranKhoiNguyen.pdf"
                 target="_blank"
               >
                 Tải CV
