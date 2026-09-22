@@ -3,7 +3,7 @@ import type { Experience } from '../types';
 export const experienceData: Experience[] = [
   {
     id: 'vinacenter-intern',
-    duration: '10/2024 - 01/2025',
+    duration: '10/2025 - 01/2026',
     company: 'Vinacenter',
     position: 'Website Manager Intern',
     description: [
